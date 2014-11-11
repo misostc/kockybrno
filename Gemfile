@@ -43,3 +43,10 @@ gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_fl
 gem 'paperclip', '~> 4.2'
 gem 'image_optim', '~> 0.11'
 gem 'paperclip-optimizer'
+
+gem 'devise'
+gem 'cancancan'
+gem 'acts-as-taggable-on', '~> 3.4.2'
+gem 'simple_form', '~> 3.0.2'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
