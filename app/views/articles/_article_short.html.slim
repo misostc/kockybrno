@@ -1,0 +1,5 @@
+.article
+  .date
+    .day= @article.created_at.day
+    .mon= I18n.t("date.abbr_month_names")[@article.created_at.month]
+  p= truncate_html(@article.text, length: @length, omission: '&hellip; ' + (link_to 'Více»', article_path(@article)))

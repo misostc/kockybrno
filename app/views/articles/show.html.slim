@@ -1,0 +1,5 @@
+.stripe-dark: .container: .row: .col-md-10.col-md-push-2
+  h1= @article.title
+  p= @article.created_at
+  p.lead= @article.text
+  p= link_to "Všechny aktuality", articles_path
