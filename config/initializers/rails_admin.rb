@@ -33,4 +33,14 @@ RailsAdmin.config do |config|
   end
 
   config.excluded_models << "User"
+  config.excluded_models << "Cat"
+  config.excluded_models << "Tomcat"
+  config.excluded_models << "Kitten"
+
+  config.model Article do
+    edit do
+      field :title
+      field :text, :wysihtml5
+    end
+  end
 end

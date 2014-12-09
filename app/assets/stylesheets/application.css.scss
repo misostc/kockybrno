@@ -1,7 +1,6 @@
 // Place all the styles related to the Application controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -11,7 +10,7 @@ body {
   font-weight: 500;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
@@ -57,7 +56,7 @@ a {
       background: linear-gradient(to bottom, #f1f1f1 1%, gainsboro 100%);
       margin-left: -1em;
     }
-    .nav>li>a {
+    .nav > li > a {
       font-size: 1.4em;
       font-weight: 600;
       color: white;
@@ -71,18 +70,20 @@ a {
         background: lighten(#f45f4a, 10%);
       }
     }
-    .nav>li:first-child>a {
+    .nav > li:first-child > a {
       padding-left: 15px;
-      span.triangle {
+      &::after {
         margin-left: -7px !important;
       }
     }
-    .nav>li.active>a {
+    .nav > li.active > a {
       background: #383838;
       text-shadow: -1px -1px 0 black;
       position: relative;
-      span.triangle {
+      &::after {
         display: block;
+        content: " ";
+        font-size: 1px;
         position: absolute;
         bottom: -20px;
         left: 50%;
@@ -198,12 +199,22 @@ a.arrow-right {
   overflow: hidden;
   position: relative;
   margin: 1em 0;
+  &.gallery-full {
+    overflow: visible;
+    ul {
+      white-space: normal;
+      li {
+        margin-bottom: 1em;
+      }
+    }
+  }
   ul {
     margin: 0;
     padding: 0;
-    width: 3000em;
+    white-space: nowrap;
+    display: block;
     li {
-      float: left;
+      display: inline-block;
       list-style-type: none;
       img {
         border: 3px solid #f45e58;
@@ -233,5 +244,32 @@ a.arrow-right {
       content: "—";
       margin-right: 0.5em;
     }
+  }
+}
+
+.stripe-nav {
+  background: #f45f4a;
+  color: #f1f1f1;
+  padding: 25px 0;
+  font-size: 1.15em;
+  font-weight: 600;
+  h3 {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+    margin-bottom: 1em;
+  }
+}
+
+.stripe-footer {
+  background: #333333;
+  color: #fff;
+  padding-top: 0.7em;
+}
+
+.image-full {
+  margin-right: 1em;
+  img {
+    width: 100%
   }
 }

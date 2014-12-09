@@ -1,0 +1,11 @@
+.stripe-dark: .container: .row: .col-md-10.col-md-push-2
+  h1 Fotogalerie
+.stripe-light: .container: .row: .col-md-10.col-md-push-2
+  .gallery.gallery-full
+    ul
+      - @photos.each do |img|
+        li
+          = link_to photo_path(img) do
+            = image_tag img.image(:thumb)
+
+  = paginate @photos, window: 4

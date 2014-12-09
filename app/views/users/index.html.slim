@@ -1,0 +1,20 @@
+.stripe-dark.off-top: .container: .row: .col-md-10.col-md-push-2
+  h1 Členy
+
+.stripe-light: .container: .row: .col-md-10.col-md-push-2
+  table.table.table-hover
+    thead
+      tr
+        th
+        th Jméno
+        th Místo
+        th Druh koček
+        th Webstránka
+    tbody
+      - @users.each do |user|
+        tr
+          td= user.prefix_title
+          td= user.last_name + ' ' + user.first_name + (unless user.suffix_title.blank? then (', ' + user.suffix_title) end )
+          td
+          td= user.species_list
+          td

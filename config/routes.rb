@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
+  get 'kittens/show'
+
+  get 'kittens/index'
+
+  get 'tomcats/show'
+
+  get 'tomcats/index'
+
+  get 'staticpages/vystavy'
+
+  get 'staticpages/kdo_jsme'
+
+  get 'exhibitions' => 'staticpages#exhibitions', as: :exhibitions
+
+  get 'about_us' => 'staticpages#about_us', as: :about_us
+
   get 'application/show'
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => {registrations: 'registrations'}
 
   resources :articles
+  resources :users
+  resources :photos
 
   root 'application#show'
 

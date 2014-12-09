@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   acts_as_taggable_on :species
 
+  has_many :kittens, :through => :cats
+  has_many :tomcats, :through => :cats
 end
