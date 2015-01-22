@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
-  get 'kittens/show'
-
-  get 'kittens/index'
-
-  get 'tomcats/show'
-
-  get 'tomcats/index'
-
-  get 'staticpages/vystavy'
-
-  get 'staticpages/kdo_jsme'
-
+    namespace :mercury do
+      resources :images
+    end
+  mount Mercury::Engine => '/'
   get 'exhibitions' => 'staticpages#exhibitions', as: :exhibitions
 
   get 'about_us' => 'staticpages#about_us', as: :about_us
@@ -22,6 +14,8 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
   resources :photos
+  resources :tomcats
+  resources :kittens
 
   root 'application#show'
 

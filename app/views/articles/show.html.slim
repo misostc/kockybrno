@@ -1,6 +1,13 @@
-.stripe-dark.off-top: .container: .row: .col-md-10.col-md-push-2
-  h1= @article.title
-  p= @article.created_at
-.stripe-light: .container: .row: .col-md-10.col-md-push-2
-  p.lead==@article.text
-  p= link_to "Všechny aktuality", articles_path
+.stripe-dark.off-top: .container: .row
+  .col-md-10.col-md-push-2
+    h1= @article.title
+    p
+      | Publikováno
+      =< l @article.created_at, format: :short
+.stripe-light: .container: .row
+  .col-md-10.col-md-push-2
+    = @article.text
+.stripe-dark: .container: .row
+  .col-md-10.col-md-push-2
+    p
+      = link_to "Další zprávy", articles_path

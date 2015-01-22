@@ -6,6 +6,14 @@ class User < ActiveRecord::Base
 
   acts_as_taggable_on :species
 
-  has_many :kittens, :through => :cats
-  has_many :tomcats, :through => :cats
+  has_many :kittens
+  has_many :tomcats
+
+  def nice_name
+    out = "";
+    if prefix_title then out << prefix_title + " " end
+    out << "#{first_name} #{last_name}"
+    if suffix_title then out << ", #{suffix_title}" end
+    out
+  end
 end

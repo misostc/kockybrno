@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/jejacks0n/mercury.git
+  revision: 1cc637b0bccea19085f824d2881c6513ed5ee8ae
+  specs:
+    mercury-rails (0.9.0)
+      coffee-rails (>= 3.2.2)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/konjoot/rails_admin_flatly_theme.git
   revision: 51e32fe6bf9c048689bc1cec346da4e05a5cb173
   branch: release_1.0
@@ -88,6 +96,7 @@ GEM
     jbuilder (2.2.3)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-migrate-rails (1.2.1)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -219,8 +228,10 @@ DEPENDENCIES
   google-webfonts
   image_optim (~> 0.11)
   jbuilder (~> 2.0)
+  jquery-migrate-rails
   jquery-rails
   kaminari
+  mercury-rails!
   paperclip (~> 4.2)
   paperclip-optimizer
   rails (= 4.1.6)

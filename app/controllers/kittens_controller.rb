@@ -1,9 +1,15 @@
 class KittensController < ApplicationController
-  def show
-    Kitten.find(params[:id])
-  end
+  before_filter :show_nav
+
+  # def show
+  #   @kitten = Kitten.find(params[:id])
+  # end
 
   def index
-    Kitten.all.order(created_at: :desc).page(params[:page])
+    @kittens = Kitten.all.order(created_at: :desc).page(params[:page]).includes(:user)
+  end
+
+  def show_nav
+    @show_navigation = true
   end
 end

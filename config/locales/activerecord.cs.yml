@@ -1,0 +1,71 @@
+cs:
+  activerecord:
+    models:
+      article:
+        one: Článek
+        few: Články
+        other: Článků
+      document:
+        one: Dokument
+        few: Dokumenty
+        other: Dokumentů
+      photo:
+        one: Obrázek
+        few: Obrázky
+        other: Obrázků
+      tomcat:
+        one: Kocour
+        few: Kocouři
+        other: Kocourů
+      kitten:
+        one: Kotě
+        few: Koťata
+        other: Koťat
+      user:
+        one: Uživatel
+        few: Uživatelé
+        other: Uživatelů
+    attributes:
+      created_at: "Vytvořeno"
+      updated_at: "Upraveno"
+
+      article:
+        title: "Titulek"
+        text: "Text"
+      document:
+        title: "Název"
+        document: "Soubor"
+      photo:
+        title: "Název"
+        alt_text: "Popis pro slepé"
+        image: "Obrázek"
+      tomcat:
+        name: "Jméno"
+        breed: "Druh"
+        tests: "Testy"
+        station: "Stanice"
+        image: "Obrázek"
+        born_at: "Narozen"
+        description: "Popisek"
+        user: "Majitel"
+      kitten:
+        name: "Jméno"
+        sex: "Pohlaví"
+        breed: "Druh"
+        station: "Stanice"
+        image: "Obrázek"
+        description: "Popisek"
+        user: "Majitel"
+      user:
+        prefix_title: "Titul před"
+        suffix_title: "Titul za"
+        first_name: "Jméno"
+        last_name: "Příjmení"
+        location: "Místo"
+        email: "Email"
+        website: "Webstránka"
+        species: "Druh koček"
+        species_list: "Seznam druhů koček"
+        password: "Heslo"
+        password_confirmation: "Heslo pro potvrzení"
+        current_password: "Stávající heslo"
