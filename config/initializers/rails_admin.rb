@@ -33,14 +33,49 @@ RailsAdmin.config do |config|
   end
 
   config.excluded_models << "User"
-  config.excluded_models << "Cat"
-  config.excluded_models << "Tomcat"
-  config.excluded_models << "Kitten"
+  # config.excluded_models << "Tomcat"
+  # config.excluded_models << "Kitten"
 
   config.model Article do
+    label_plural Article.model_name.human(count: 2)
     edit do
       field :title
       field :text, :wysihtml5
     end
   end
+
+  config.model Tomcat do
+    edit do
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+      field :name
+      field :breed
+      field :tests
+      field :station
+      field :image
+      field :born_at
+      field :description, :wysihtml5
+    end
+  end
+
+  config.model Kitten do
+    edit do
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+      field :name
+      field :sex
+      field :breed
+      field :station
+      field :image
+      field :description, :wysihtml5
+    end
+  end
+
+
 end

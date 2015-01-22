@@ -22,7 +22,12 @@ html
                 svg[width="210" height="210"]
                   image[height="210" width="210" xlink:href=image_path('logo.svg') src=image_path('logo.png')]
             .menu: .container: .row: .col-md-10.col-md-push-2.hidden-xs
-              = render_navigation
+              = render_navigation level: 1
+
+    - if @show_navigation
+      .stripe-dark.off-top: .container: .row
+        .col-md-10.col-md-push-2
+          = render_navigation level: 2
 
 
     = yield
@@ -32,10 +37,21 @@ html
         .container: .row
           .col-md-2.col-md-push-2
             h3 Chov
-            p Lorem ipsum...
+            ul
+              li= link_to "Kocouři", tomcats_path
+              li= link_to "Koťata", kittens_path
           .col-md-2.col-md-push-2
-            h3 Výstavy
-            p Lorem ipsum...
+            h3 Člen
+            - if current_user
+              p
+                | Prihlášen
+                =< current_user.nice_name
+              ul
+                li= link_to "Editovat údaje", edit_user_registration_path
+                li= link_to "Odhlásit se", destroy_user_session_path, method: :delete
+            - else
+              ul
+                li= link_to "Přihlásit se", new_user_session_path
           .col-md-2.col-md-push-2
             h3 Dokumenty
             p Lorem ipsum...
@@ -44,4 +60,4 @@ html
       .stripe-footer
         .container: .row
           .col-md-10.col-md-push-2
-            p Lorem ipsum
+            p#footer_text[data-mercury="full"]

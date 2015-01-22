@@ -1,3 +1,4 @@
+source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
 source 'https://rubygems.org'
 
 
@@ -56,3 +57,5 @@ gem 'truncate_html'
 gem 'kaminari'
 gem 'simple-navigation', '~> 3.13.0'
 gem 'bootstrap-wysihtml5-rails', '0.3.1.24'
+gem 'mercury-rails', github: 'jejacks0n/mercury'
+gem 'jquery-migrate-rails'

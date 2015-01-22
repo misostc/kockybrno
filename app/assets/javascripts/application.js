@@ -11,18 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-migrate-min
 //= require jquery_ujs
-//= require jquery.marquee
 //= require turbolinks
 //= require_tree .
-
-
-//$(document).ready(function(){
-//    $(".gallery").marquee({
-//        duration: 1000,
-//        gap: 0,
-//        delayBeforeStart: 0,
-//        duplicated: true,
-//        pauseOnHover: true
-//    })
-//});

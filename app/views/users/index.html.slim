@@ -6,15 +6,15 @@
     thead
       tr
         th
-        th Jméno
-        th Místo
-        th Druh koček
-        th Webstránka
+        th= User.human_attribute_name("first_name")
+        th= User.human_attribute_name("location")
+        th= User.human_attribute_name("species_list")
+        th= User.human_attribute_name("website")
     tbody
       - @users.each do |user|
         tr
           td= user.prefix_title
           td= user.last_name + ' ' + user.first_name + (unless user.suffix_title.blank? then (', ' + user.suffix_title) end )
-          td
+          td= user.location
           td= user.species_list
-          td
+          td= user.website

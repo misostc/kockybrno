@@ -1,6 +1,11 @@
 // Place all the styles related to the Application controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$pagination-color: #333;
+$pagination-hover-color: #333;
+$pagination-active-bg: #333;
+$pagination-active-border: #333;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -259,17 +264,46 @@ a.arrow-right {
     text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
     margin-bottom: 1em;
   }
+  a {
+    color: #fff;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
 }
 
 .stripe-footer {
   background: #333333;
   color: #fff;
   padding-top: 0.7em;
+  a {
+    color: #fff;
+  }
 }
 
 .image-full {
   margin-right: 1em;
   img {
     width: 100%
+  }
+}
+
+.cat-list {
+  img {
+    max-width: 100%;
+  }
+}
+
+.stripe-dark .nav {
+  a.active, a:hover, a:focus, a.active:hover {
+    background: #333;
+    border-radius: 0;
+  }
+  a:hover, a:focus {
+    color: #fff
   }
 }
