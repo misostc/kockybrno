@@ -1,0 +1,9 @@
+.stripe-dark.off-top: .container: .row
+  .col-md-10.col-md-push-2
+    h1 Aktuality
+.stripe-light: .container
+  - @articles.each do |a|
+    .row: .col-md-10.col-md-push-2
+      = article_short(a, 500)
+  .row: .col-md-10.col-md-push-2
+    = paginate @articles, window: 4

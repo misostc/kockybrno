@@ -1,0 +1,25 @@
+.stripe-dark.off-top: .container: .row
+  .col-md-10.col-md-push-2
+    h1 Kočky Brno
+    p.lead
+      | Jsme základní organizací Českého svazu chovatelů koček. Naším cílem je sdružit chovatele a majitele koček, osoby, které sdílejí stejné zájmy a respektují pravidla, slušné chování a ctí hodnoty.
+          Jsme malou funkční organizaci, s vlastními interními stanovami, zavedeme brigádnické hodiny, pořádání propagačních výstav a přednáškovou činnost.
+          Naším cílem je pokračovat v odkaze, který zde zanechal pan Ing. B. Mahelka.
+
+.stripe-light: .container
+  .row: .col-md-10.col-md-push-2
+    h2 Aktuality
+
+  .row
+    .col-md-5.col-md-push-2
+      - if @articles.length > 0
+        = article_short(@articles.first, 500)
+
+    .col-md-5.col-md-push-2
+      - @articles.drop(1).each do |article|
+        = article_short(article, 130)
+      .link-more
+        = link_to 'Starší zprávy»', articles_path
+
+
+= gallery

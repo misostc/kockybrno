@@ -1,0 +1,13 @@
+.stripe-dark: .container: .row
+  .col-md-10.col-md-push-2
+    h2 Naše kočky
+
+  .col-md-10.col-md-push-2
+    .gallery: ul
+      - @photos.each do |image|
+        li
+          = link_to photo_path(image) do
+            = image_tag image.image(:thumb)
+    p
+      | Zobrazit celou
+      =< link_to 'fotogalerii»', photos_path
