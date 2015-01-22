@@ -127,6 +127,7 @@ GEM
     paperclip-optimizer (1.0.3)
       image_optim (~> 0.9)
       paperclip (>= 3.4)
+    pg (0.18.1)
     progress (3.1.0)
     rack (1.5.2)
     rack-pjax (0.8.0)
@@ -233,6 +234,7 @@ DEPENDENCIES
   mercury-rails!
   paperclip (~> 4.2)
   paperclip-optimizer
+  pg
   rails (= 4.1.6)
   rails_admin (~> 0.6.5)
   rails_admin_flatly_theme!
