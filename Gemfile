@@ -42,7 +42,7 @@ gem 'rails_admin', '~> 0.6.5'
 gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git', :branch => 'release_1.0'
 gem 'paperclip', '~> 4.2'
 gem 'image_optim_pack'
-gem 'image_optim', '~> 0.11'
+gem 'image_optim', '~> 0.18'
 gem 'paperclip-optimizer'
 
 gem 'devise'
