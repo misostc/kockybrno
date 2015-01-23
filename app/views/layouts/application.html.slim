@@ -44,7 +44,7 @@ html
             h3 Člen
             - if current_user
               p
-                | Prihlášen
+                | Přihlášen
                 =< current_user.nice_name
               ul
                 li= link_to "Editovat údaje", edit_user_registration_path

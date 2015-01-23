@@ -66,6 +66,6 @@ cs:
         website: "Webstránka"
         species: "Druh koček"
         species_list: "Seznam druhů koček"
-        password: "Heslo"
-        password_confirmation: "Heslo pro potvrzení"
+        password: "Nové heslo"
+        password_confirmation: "Nové heslo pro potvrzení"
         current_password: "Stávající heslo"

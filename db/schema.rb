@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209091815) do
+ActiveRecord::Schema.define(version: 20150107135612) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -31,8 +31,25 @@ ActiveRecord::Schema.define(version: 20141209091815) do
   end
 
   create_table "kittens", force: true do |t|
-    t.integer  "cat_id"
     t.string   "sex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "breed"
+    t.string   "station"
+    t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "mercury_images", force: true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,10 +86,19 @@ ActiveRecord::Schema.define(version: 20141209091815) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "tomcats", force: true do |t|
-    t.integer  "cat_id"
     t.string   "tests"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "breed"
+    t.string   "station"
+    t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.date     "born_at"
   end
 
   create_table "users", force: true do |t|
