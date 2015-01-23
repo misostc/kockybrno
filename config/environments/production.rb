@@ -78,7 +78,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
       storage: :filesystem,
-      :url => "/assets/uploads/:id.:extension",
-      :path => ":rails_root/public/assets/uploads/:id.:extension"
+      :url => "/assets/uploads/:class/:attachment/:id_partition/:style/:filename",
+      :path => ":rails_root/public/assets/uploads/:class/:attachment/:id_partition/:style/:filename"
   }
 end
