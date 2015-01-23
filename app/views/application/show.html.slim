@@ -13,11 +13,13 @@
   .row
     .col-md-5.col-md-push-2
       - if @articles.length > 0
-        = article_short(@articles.first, 500)
+        = article_short(@articles.first, 150)
+      - if @articles.length > 1
+        = article_short(@articles.first, 150)
 
     .col-md-5.col-md-push-2
-      - @articles.drop(1).each do |article|
-        = article_short(article, 130)
+      - @articles.drop(2).each do |article|
+        = article_short(article, 150)
       .link-more
         = link_to 'Starší zprávy»', articles_path
 

@@ -75,4 +75,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = {
+      storage: :filesystem,
+      path: ENV['OPENSHIFT_DATA_DIR']+"public/assets/users_folder/:id/:style/:id.:extension"
+  }
 end
