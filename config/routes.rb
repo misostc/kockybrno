@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'documents/show'
+
+  get 'documents/index'
+
 #  namespace :mercury do
 #resources :images
 #    end
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   resources :photos
   resources :tomcats
   resources :kittens
+  resources :documents
 
   root 'application#show'
 

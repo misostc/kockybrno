@@ -54,10 +54,17 @@ html
                 li= link_to "Přihlásit se", new_user_session_path
           .col-md-2.col-md-push-2
             h3 Dokumenty
-            p Lorem ipsum...
+            ul
+              - @docs.each do |doc|
+                li= link_to doc.title, document_path(doc)
+              li= link_to "Všechny dokumenty", documents_path
           .col-md-4.col-md-push-2
             = render partial: 'contact'
       .stripe-footer
         .container: .row
           .col-md-10.col-md-push-2
             p#footer_text[data-mercury="full"]
+              | &copy;
+              =<> Date.today.year
+              | ZO Kočky Brno Královopolská 151, 612 00 Brno, email:
+              =< mail_to("webmaster@kockybrno.cz")

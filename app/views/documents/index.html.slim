@@ -1,0 +1,9 @@
+.stripe-dark.off-top: .container: .row: .col-md-push-2.col-md-10
+  h2 Dokumenty
+
+.stripe-light: .container: .row: .col-md-push-2.col-md-10
+  - @docs.each do |doc|
+    p= link_to doc.title, document_path(doc)
+    hr
+
+= paginate @docs, window: 4
