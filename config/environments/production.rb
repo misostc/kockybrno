@@ -78,6 +78,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
       storage: :filesystem,
-      path: ENV['OPENSHIFT_DATA_DIR']+"public/assets/users_folder/:id/:style/:id.:extension"
+      :url => "/assets/:id.:extension",
+      :path => ":rails_root/public/assets/:id.:extension"
   }
 end
