@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'photogalleries/show'
+
   get 'documents/show'
 
   get 'documents/index'
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   resources :tomcats
   resources :kittens
   resources :documents
+  resources :photogalleries
 
   root 'application#show'
 

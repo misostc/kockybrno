@@ -3,17 +3,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  acts_as_taggable_on :species
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
 
   has_many :kittens
   has_many :tomcats
 
   def nice_name
     out = "";
-    if prefix_title then out << prefix_title + " " end
+    unless prefix_title.blank? then out << prefix_title + " " end
     out << "#{first_name} #{last_name}"
-    if suffix_title then out << ", #{suffix_title}" end
+    unless prefix_title.blank? then out << ", #{suffix_title}" end
     out
   end
 end

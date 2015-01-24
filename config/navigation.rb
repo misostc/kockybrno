@@ -49,6 +49,6 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item :exhibitions, 'Výstavy', exhibitions_path
 
-    primary.item :cleny, 'Členy', users_path, highlights_on: %r(/user)
+    primary.item :cleny, 'Členové', users_path, highlights_on: %r(/user)
   end
 end

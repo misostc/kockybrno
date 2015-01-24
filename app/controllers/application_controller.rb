@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def show
     @articles = Article.all.order(created_at: :desc).limit(4)
-    @photos = Photo.sample(5)
+    @photos = Photogallery.all.first.photos.sample(5)
   end
 
   def load_documents

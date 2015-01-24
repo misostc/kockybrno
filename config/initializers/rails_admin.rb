@@ -32,7 +32,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models << "User"
+  # config.excluded_models << "User"
   # config.excluded_models << "Tomcat"
   # config.excluded_models << "Kitten"
 
