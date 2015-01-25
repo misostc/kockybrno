@@ -8,23 +8,28 @@
           dt= Tomcat.human_attribute_name("name")
           dd= tomcat.name
 
-          dt= Tomcat.human_attribute_name("born_at")
-          dd= tomcat.born_at
+          - unless tomcat.born_at.blank?
+            dt= Tomcat.human_attribute_name("born_at")
+            dd= tomcat.born_at
 
-          dt= Tomcat.human_attribute_name("breed")
-          dd= tomcat.breed
+          - unless tomcat.breed.blank?
+            dt= Tomcat.human_attribute_name("breed")
+            dd= tomcat.breed
 
-          dt= Tomcat.human_attribute_name("tests")
-          dd= tomcat.tests
+          - unless tomcat.tests.blank?
+            dt= Tomcat.human_attribute_name("tests")
+            dd= tomcat.tests
 
           dt= Tomcat.human_attribute_name("user")
           dd= tomcat.user.nice_name
 
-          dt= Tomcat.human_attribute_name("station")
-          dd= tomcat.station
+          - unless tomcat.station.blank?
+            dt= Tomcat.human_attribute_name("station")
+            dd= tomcat.station
 
-          dt= User.human_attribute_name("website")
-          dd= tomcat.user.website
+          - unless tomcat.user.website.blank?
+            dt= User.human_attribute_name("website")
+            dd= tomcat.user.website
 
           dt= User.human_attribute_name("email")
           dd= tomcat.user.email

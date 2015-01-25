@@ -17,11 +17,13 @@
           dt= Kitten.human_attribute_name("user")
           dd= kitten.user.nice_name
 
-          dt= Kitten.human_attribute_name("station")
-          dd= kitten.station
+          - unless kitten.station.blank?
+            dt= Kitten.human_attribute_name("station")
+            dd= kitten.station
 
-          dt= Kitten.human_attribute_name("website")
-          dd= kitten.user.website
+          - unless kitten.user.website.blank?
+            dt= Kitten.human_attribute_name("website")
+            dd= kitten.user.website
 
           dt= Kitten.human_attribute_name("email")
           dd= kitten.user.email
