@@ -46,11 +46,7 @@ RailsAdmin.config do |config|
 
   config.model Tomcat do
     edit do
-      field :user_id, :hidden do
-        default_value do
-          bindings[:view]._current_user.id
-        end
-      end
+      field :user_id
       field :name
       field :breed
       field :tests
@@ -63,17 +59,29 @@ RailsAdmin.config do |config|
 
   config.model Kitten do
     edit do
-      field :user_id, :hidden do
-        default_value do
-          bindings[:view]._current_user.id
-        end
-      end
+      field :user_id
       field :name
       field :sex
       field :breed
       field :station
       field :image
       field :description, :wysihtml5
+    end
+  end
+
+  config.model User do
+    edit do
+      field :email
+      field :password
+      field :password_confirmation
+      field :admin
+      field :first_name
+      field :last_name
+      field :prefix_title
+      field :suffix_title
+      field :location
+      field :website
+      field :species
     end
   end
 

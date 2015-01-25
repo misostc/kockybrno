@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     out = "";
     unless prefix_title.blank? then out << prefix_title + " " end
     out << "#{first_name} #{last_name}"
-    unless prefix_title.blank? then out << ", #{suffix_title}" end
+    unless suffix_title.blank? then out << ", #{suffix_title}" end
     out
   end
 end

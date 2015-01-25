@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(:last_name)
+    @users = User.all.order(:last_name, :first_name)
   end
 end

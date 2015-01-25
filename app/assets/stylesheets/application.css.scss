@@ -268,7 +268,7 @@ a.arrow-right {
     color: #fff;
   }
   ul {
-    margin: 0;
+    margin: 0 0 1em;
     padding: 0;
     li {
       list-style-type: none;
@@ -305,5 +305,24 @@ a.arrow-right {
   }
   a:hover, a:focus {
     color: #fff
+  }
+}
+
+.document {
+  display:block;
+  clear:both;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 0 10px;
+  h3,p {
+    font-size: 1em;
+    line-height: 1.4em;
+    margin: 0;
+    margin-left: 50px;
+  }
+  img {
+    float: left;
+    margin-top: 4px;
   }
 }

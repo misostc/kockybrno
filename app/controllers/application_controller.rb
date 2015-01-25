@@ -7,10 +7,11 @@ class ApplicationController < ActionController::Base
 
   def show
     @articles = Article.all.order(created_at: :desc).limit(4)
-    @photos = Photogallery.all.first.photos.sample(5)
+    @gallery = Photogallery.all.order(created_at: :asc).first
+    @photos = @gallery.photos.sample(5)
   end
 
   def load_documents
-    @docs = Document.all.order(created_at: :desc).limit(5)
+    @docs = Document.most_hit
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124205600) do
+ActiveRecord::Schema.define(version: 20150125122843) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -71,6 +71,18 @@ ActiveRecord::Schema.define(version: 20150124205600) do
     t.datetime "image_updated_at"
     t.integer  "photogallery_id"
   end
+
+  create_table "punches", force: true do |t|
+    t.integer  "punchable_id",                          null: false
+    t.string   "punchable_type", limit: 20,             null: false
+    t.datetime "starts_at",                             null: false
+    t.datetime "ends_at",                               null: false
+    t.datetime "average_time",                          null: false
+    t.integer  "hits",                      default: 1, null: false
+  end
+
+  add_index "punches", ["average_time"], name: "index_punches_on_average_time"
+  add_index "punches", ["punchable_type", "punchable_id"], name: "punchable_index"
 
   create_table "tomcats", force: true do |t|
     t.string   "tests"

@@ -57,6 +57,7 @@ html
             ul
               - @docs.each do |doc|
                 li= link_to doc.title, document_path(doc)
+            ul
               li= link_to "Všechny dokumenty", documents_path
           .col-md-4.col-md-push-2
             = render partial: 'contact'
