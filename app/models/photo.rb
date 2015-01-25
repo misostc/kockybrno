@@ -7,5 +7,5 @@ class Photo < ActiveRecord::Base
   validates :title, :presence => true
   validates :image, :attachment_presence => true
   validates :photogallery, :presence => true
-
+  paginates_per 20
 end

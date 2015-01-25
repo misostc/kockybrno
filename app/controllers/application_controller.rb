@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_documents
-    @docs = Document.most_hit
+    @hit_docs = Document.most_hit
   end
 end

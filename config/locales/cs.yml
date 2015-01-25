@@ -208,3 +208,10 @@ cs:
       long: ! '%A %d. %B %Y %H:%M'
       short: ! '%d. %m. %H:%M'
     pm: pm
+  views:
+    pagination:
+      first: "&laquo; První"
+      last: Poslední &raquo;
+      next: "Další &rsaquo;"
+      previous: "&lsaquo; Předchozí"
+      truncate: "&hellip;"

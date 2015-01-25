@@ -4,10 +4,9 @@
 .stripe-light: .container: .row: .col-md-push-2.col-md-10
   - @docs.each do |doc|
     .document
-      =link_to document_path(doc) do
+      =link_to document_path(doc), data: { no_turbolink: true } do
         = image_tag Icon.for_filename(doc.document_file_name)
-      h3= link_to doc.title, document_path(doc)
+      h3= link_to doc.title, document_path(doc), data: { no_turbolink: true }
       p= "Přidán #{l doc.created_at.to_date, format: :short}, velikost: #{Filesize.from("#{doc.document_file_size} B").pretty}, stažen: #{doc.hits}x"
-    hr
 
 = paginate @docs, window: 4
