@@ -1,32 +1,12 @@
 .stripe-dark.off-top: .container: .row: .col-md-10.col-md-push-2
   h1#exhibitions_main[data-mercury="simple"] Výstavy
   p.lead#exhibitions_paragraph[data-mercury="simple"]
-    | Protože jsou v naší ZO členové, kteří se po mnoho let aktivně účastnili příprav mezinárodních výstav, věříme, že se Vám výstavy, které pro Vás v budoucnu připravíme, budou líbit.
+    = @region_main_text.content
 
 .stripe-light: .container: .row
   .col-md-5.col-md-push-2
     #exhibitions_left_col[data-mercury="full"]
-      h3 Výstavy naší ZO
-      p I. a II. Mezinárodní výstava 11.-12.10.2014 Kulturní dům Semilasso, Palackého třída 126, Brno
-      ul
-        li=link_to "KATALOG", document_path(2)
-        li=link_to "DODATEK 1", document_path(3)
-        li=link_to "DODATEK 2", document_path(4)
-        li=link_to "VÝSLEDKOVÁ LISTINA SOBOTA", document_path(5)
-        li=link_to "VÝSLEDKOVÁ LISTINA NEDĚLE", document_path(6)
-        li=link_to "BIS SOBOTA", document_path(7)
-        li=link_to "BIS NEDĚLE", document_path(8)
-        li=link_to "Fotogalerie", photogallery_path(2)
-        li= link_to "Video z výstavy", "http://www.video.muni.cz/public/Kocky//Vystava_kocek.avi"
+    == @region_left_col.content
   .col-md-5.col-md-push-2
     #exhibitions_right_col[data-mercury="full"]
-      h3 Výstavy v ČR
-      p
-        | Seznam
-        =< link_to "výstav v České Republice najdete zde.", "http://www.schk.cz/kalendar-vystav-schk.html"
-
-      h3 Světová výstava 2014
-      p
-        | Po mnoha letech se
-        =<> link_to "FIFe světová výstava", "http://worldcatshow2014.cz/home.php"
-        | uskuteční v České Republice.
+    == @region_right_col.content

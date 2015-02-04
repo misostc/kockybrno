@@ -6,9 +6,4 @@ class StaticpagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get kdo_jsme" do
-    get :about_us
-    assert_response :success
-  end
-
 end

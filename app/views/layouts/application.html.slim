@@ -60,12 +60,11 @@ html
             ul
               li= link_to "Všechny dokumenty", documents_path
           .col-md-4.col-md-push-2
-            = render partial: 'contact'
+            h3 Kontakt
+            address#contact[data-mercury="full"]
+              = @region_contact.content
       .stripe-footer
         .container: .row
           .col-md-10.col-md-push-2
             p#footer_text[data-mercury="full"]
-              | &copy;
-              =<> Date.today.year
-              | ZO Kočky Brno Královopolská 151, 612 00 Brno, email:
-              =< mail_to("webmaster@kockybrno.cz")
+              = @region_footer.content
