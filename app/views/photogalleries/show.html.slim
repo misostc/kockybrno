@@ -7,7 +7,7 @@
     ul
       - @photos.each do |img|
         li
-          = link_to photo_path(img) do
+          = link_to photo_path(img), :data => {imgurl: img.image(:original)} do
             = image_tag img.image(:thumb)
 
 = paginate @photos, window: 4

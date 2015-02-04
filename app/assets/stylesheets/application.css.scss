@@ -1,6 +1,10 @@
 // Place all the styles related to the Application controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require_self
+ *= require_tree .
+ */
 
 $pagination-color: #333;
 $pagination-hover-color: #333;
