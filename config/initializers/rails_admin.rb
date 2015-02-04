@@ -59,8 +59,8 @@ RailsAdmin.config do |config|
 
   config.model Kitten do
     edit do
-      field :user_id
-      field :name
+      field :user
+      field :born_at
       field :sex
       field :breed
       field :station
@@ -82,6 +82,9 @@ RailsAdmin.config do |config|
       field :location
       field :website
       field :species
+    end
+    object_label_method do
+      :nice_name
     end
   end
 
