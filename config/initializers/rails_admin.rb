@@ -46,11 +46,12 @@ RailsAdmin.config do |config|
 
   config.model Tomcat do
     edit do
-      field :user_id
+      field :user
       field :name
       field :breed
       field :tests
       field :station
+      field :ems
       field :image
       field :born_at
       field :description, :wysihtml5

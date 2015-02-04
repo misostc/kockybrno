@@ -7,4 +7,6 @@ class Tomcat < ActiveRecord::Base
   validates :image, :attachment_presence => true
 
   validates :user, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
 end

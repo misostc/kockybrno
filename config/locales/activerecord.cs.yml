@@ -47,6 +47,8 @@ cs:
         image: "Obrázek"
         description: "Popisek"
         user: "Majitel"
+        ems: "EMS"
+        born_at: "Narozen"
       kitten:
         born_at: "Vrh narozen"
         sex: "Pohlaví"
