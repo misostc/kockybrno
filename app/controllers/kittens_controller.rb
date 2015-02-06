@@ -6,7 +6,7 @@ class KittensController < ApplicationController
   # end
 
   def index
-    @kittens = Kitten.all.order(created_at: :desc).page(params[:page]).includes(:user)
+    @kittens = Kitten.all.order(created_at: :desc).where(confirmed: true).page(params[:page]).includes(:user)
   end
 
   def show_nav

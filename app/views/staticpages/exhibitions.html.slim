@@ -1,7 +1,7 @@
 .stripe-dark.off-top: .container: .row: .col-md-10.col-md-push-2
   h1#exhibitions_main[data-mercury="simple"] Výstavy
   p.lead#exhibitions_paragraph[data-mercury="simple"]
-    = @region_main_text.content
+    == allowed_tags @region_main_text.content
 
 .stripe-light: .container: .row
   .col-md-5.col-md-push-2

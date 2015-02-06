@@ -4,15 +4,12 @@ RailsAdmin.config do |config|
 
   # == Devise ==
   config.authenticate_with do
-    render :status => :forbidden, :text => "Forbidden fruit" unless current_user.try(:admin?)
+    render :status => :forbidden, :text => "Zakázaný přístup" unless current_user.try(:admin?)
   end
   config.current_user_method(&:current_user)
 
   ## == Cancan ==
   # config.authorize_with :cancancan
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
@@ -32,9 +29,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  # config.excluded_models << "User"
-  # config.excluded_models << "Tomcat"
-  # config.excluded_models << "Kitten"
+  config.excluded_models << "Punch"
 
   config.model Article do
     label_plural Article.model_name.human(count: 2)
@@ -46,6 +41,7 @@ RailsAdmin.config do |config|
 
   config.model Tomcat do
     edit do
+      field :confirmed
       field :user
       field :name
       field :breed
@@ -60,6 +56,7 @@ RailsAdmin.config do |config|
 
   config.model Kitten do
     edit do
+      field :confirmed
       field :user
       field :born_at
       field :sex
@@ -86,6 +83,13 @@ RailsAdmin.config do |config|
     end
     object_label_method do
       :nice_name
+    end
+  end
+
+  config.model Region do
+    edit do
+      field :name
+      field :content, :wysihtml5
     end
   end
 

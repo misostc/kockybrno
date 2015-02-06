@@ -2,7 +2,7 @@
   .col-md-10.col-md-push-2
     h1#main_head[data-mercury="simple"] Kočky Brno
     p.lead#main_text[data-mercury="simple"]
-      = @region_main_text.content
+      == allowed_tags @region_main_text.content
 
 .stripe-light: .container
   .row: .col-md-10.col-md-push-2

@@ -62,9 +62,9 @@ html
           .col-md-4.col-md-push-2
             h3 Kontakt
             address#contact[data-mercury="full"]
-              = @region_contact.content
+              == allowed_tags @region_contact.content
       .stripe-footer
         .container: .row
           .col-md-10.col-md-push-2
             p#footer_text[data-mercury="full"]
-              = @region_footer.content
+              == allowed_tags @region_footer.content
