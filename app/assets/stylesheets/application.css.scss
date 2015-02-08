@@ -331,3 +331,28 @@ a.arrow-right {
     margin-top: 4px;
   }
 }
+
+.control-group {
+  margin: 0 0 0.5em;
+
+  label {
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+    width: 100%
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%
+  }
+
+
+  .help-inline {
+    display: block;
+    color: #f45f4a;
+  }
+}
+
+input[type="submit"] {
+  font-size: 1.5em;
+}

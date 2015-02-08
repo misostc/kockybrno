@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'photogalleries/show'
-
-  get 'documents/show'
-
-  get 'documents/index'
 
 #  namespace :mercury do
 #resources :images
@@ -14,17 +9,15 @@ Rails.application.routes.draw do
 
   get 'about_us' => 'staticpages#about_us', as: :about_us
 
-  get 'application/show'
-
   devise_for :users, :controllers => {registrations: 'registrations'}
 
-  resources :articles
-  resources :users
-  resources :photos
-  resources :tomcats
-  resources :kittens
-  resources :documents
-  resources :photogalleries
+  resources :articles, only: [:index, :show]
+  resources :users, only: [:index]
+  resources :photos, only: [:show]
+  resources :tomcats, only: [:index, :new, :create, :destroy]
+  resources :kittens, only: [:index, :new, :create, :destroy]
+  resources :documents, only: [:index, :show]
+  resources :photogalleries, only: [:show]
 
   root 'application#show'
 
