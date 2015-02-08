@@ -1,0 +1,45 @@
+.stripe-light: .container: .row: .col-md-10.col-md-push-2
+  h2 Přidat inzerát do sekce Kocouři
+  p.lead Vyplňte formulář, váš inzerát poté musí být schválen správcem stránky.
+.stripe-dark: .container
+  = simple_form_for @tomcat do |f|
+    .row
+      .col-md-3.col-md-push-2
+        h3 Kontaktní údaje
+        p
+        | (Převzaty z nastavení účtu)
+
+        dl
+          dt= Tomcat.human_attribute_name("user")
+          dd= current_user.nice_name
+
+          - unless current_user.website.blank?
+            dt= Tomcat.human_attribute_name("website")
+            dd= current_user.website
+
+          dt= Tomcat.human_attribute_name("email")
+          dd= current_user.email
+
+        p
+          =link_to "Nastavení účtu", edit_user_registration_path, target: "_blank"
+
+      .col-md-7.col-md-push-2
+        .container-fluid
+          .row
+            .col-md-12
+              h3 Údaje o kocourovi
+          .row
+            .col-md-5
+              = f.input :name
+              = f.input :breed
+              = f.input :station
+              = f.input :tests
+            .col-md-5
+              = f.input :ems
+              = f.input :born_at
+              = f.input :image, required: true
+          .row
+            .col-md-12
+              = f.input :description, :input_html => { 'rows' => 6, 'cols' => 70 }
+          .row: .col-md-12
+            = f.submit

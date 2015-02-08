@@ -41,3 +41,51 @@
   .row
     .col-md-10.col-md-push-2
       = paginate @tomcats, window: 4
+
+
+- if current_user
+  .stripe-dark: .container
+    .row
+      .col-md-10.col-md-push-2
+        h2 Vaše inzeráty
+    - @user_tomcats.each do |tomcat|
+      .row
+        .col-md-4.col-md-push-2
+          = image_tag tomcat.image(:medium)
+        .col-md-6.col-md-push-2
+          dl
+            dt= Tomcat.human_attribute_name("confirmed")
+            dd= check_box_tag :confirmed, "1", tomcat.confirmed, {disabled: true}
+
+            dt= Tomcat.human_attribute_name("name")
+            dd= tomcat.name
+
+            - unless tomcat.born_at.blank?
+              dt= Tomcat.human_attribute_name("born_at")
+              dd= tomcat.born_at
+
+            - unless tomcat.breed.blank?
+              dt= Tomcat.human_attribute_name("breed")
+              dd= tomcat.breed
+
+            - unless tomcat.ems.blank?
+              dt= Tomcat.human_attribute_name("ems")
+              dd= tomcat.ems
+
+            dt= Tomcat.human_attribute_name("user")
+            dd= tomcat.user.nice_name
+
+            - unless tomcat.station.blank?
+              dt= Tomcat.human_attribute_name("station")
+              dd= tomcat.station
+
+            - unless tomcat.user.website.blank?
+              dt= User.human_attribute_name("website")
+              dd= tomcat.user.website
+
+            dt= User.human_attribute_name("email")
+            dd= tomcat.user.email
+
+          == tomcat.description
+        .col-md-10.col-md-push-2
+          hr

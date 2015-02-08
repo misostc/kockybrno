@@ -35,3 +35,44 @@
   .row
     .col-md-10.col-md-push-2
       = paginate @kittens, window: 4
+
+- if current_user
+  .stripe-dark: .container
+    .row
+      .col-md-10.col-md-push-2
+        h2 Vaše inzeráty
+    - @user_kittens.each do |kitten|
+      .row
+        .col-md-4.col-md-push-2
+          = image_tag kitten.image(:medium)
+        .col-md-6.col-md-push-2
+          dl
+            dt= Kitten.human_attribute_name("confirmed")
+            dd= check_box_tag :confirmed, "1", kitten.confirmed, {disabled: true}
+
+            dt= Kitten.human_attribute_name("born_at")
+            dd= kitten.born_at
+
+            dt= Kitten.human_attribute_name("sex")
+            dd= kitten.sex
+
+            dt= Kitten.human_attribute_name("breed")
+            dd= kitten.breed
+
+            dt= Kitten.human_attribute_name("user")
+            dd= kitten.user.nice_name
+
+            - unless kitten.station.blank?
+              dt= Kitten.human_attribute_name("station")
+              dd= kitten.station
+
+            - unless kitten.user.website.blank?
+              dt= Kitten.human_attribute_name("website")
+              dd= kitten.user.website
+
+            dt= Kitten.human_attribute_name("email")
+            dd= kitten.user.email
+
+          == kitten.description
+        .col-md-10.col-md-push-2
+          hr

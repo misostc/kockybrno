@@ -8,6 +8,9 @@ html
     = google_webfonts_link_tag "Exo 2" => [500, 600, 800], subset: %w[latin latin-ext]
     = csrf_meta_tags
   body
+    - flash.each do |type, message|
+      javascript:
+        alert('#{{ message }}')
     header#head
       .logo-top.visible-sm.visible-xs
         = link_to root_path do

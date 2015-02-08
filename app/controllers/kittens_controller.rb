@@ -4,6 +4,9 @@ class KittensController < ApplicationController
 
   def index
     @kittens = Kitten.all.order(created_at: :desc).where(confirmed: true).page(params[:page]).includes(:user)
+    if current_user
+      @user_kittens = current_user.kittens.order(created_at: :desc)
+    end
   end
 
   def show_nav
