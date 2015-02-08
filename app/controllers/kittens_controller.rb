@@ -1,5 +1,5 @@
 class KittensController < ApplicationController
-  before_filter :show_nav
+  before_action :show_nav
   before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
@@ -11,7 +11,7 @@ class KittensController < ApplicationController
   end
 
   def new
-    @kitten = Kitten.new()
+    @kitten = Kitten.new
   end
 
   def create
@@ -20,7 +20,7 @@ class KittensController < ApplicationController
     @kitten.user = current_user
 
     if @kitten.save
-      redirect_to kittens_path, notice: "Záznam přidán. Záznam je nutno schválit správcem."
+      redirect_to kittens_path, notice: 'Záznam přidán. Záznam je nutno schválit správcem.'
     else
       render :new
     end
@@ -32,7 +32,7 @@ class KittensController < ApplicationController
       @kitten.destroy
       redirect_to kittens_path, notice: 'Záznam odstraňen.'
     else
-      redirect_to kittens_path, notice: "Uživatelé mohou odstranit pouze své záznamy."
+      redirect_to kittens_path, notice: 'Uživatelé mohou odstranit pouze své záznamy.'
     end
   end
 

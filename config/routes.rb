@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-
-#  namespace :mercury do
-#resources :images
-#    end
-#  mount Mercury::Engine => '/'
+  #  namespace :mercury do
+  # resources :images
+  #    end
+  #  mount Mercury::Engine => '/'
 
   get 'exhibitions' => 'staticpages#exhibitions', as: :exhibitions
 
   get 'about_us' => 'staticpages#about_us', as: :about_us
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :articles, only: [:index, :show]
   resources :users, only: [:index]

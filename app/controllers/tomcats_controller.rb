@@ -1,6 +1,5 @@
 class TomcatsController < ApplicationController
-
-  before_filter :show_nav
+  before_action :show_nav
   before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def tomcat_parameters

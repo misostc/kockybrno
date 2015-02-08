@@ -77,8 +77,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.paperclip_defaults = {
-      storage: :filesystem,
-      :url => "/assets/uploads/:class/:attachment/:id_partition/:style/:filename",
-      :path => ":rails_root/public/assets/uploads/:class/:attachment/:id_partition/:style/:filename"
+    storage: :filesystem,
+    url: '/assets/uploads/:class/:attachment/:id_partition/:style/:filename',
+    path: ':rails_root/public/assets/uploads/:class/:attachment/:id_partition/:style/:filename'
   }
 end

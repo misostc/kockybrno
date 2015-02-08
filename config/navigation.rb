@@ -43,12 +43,12 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item :chov, 'Chov', tomcats_path do |chov|
       chov.dom_class = 'nav nav-justified nav-pills'
-      chov.item :kocouri, 'Kocouři', tomcats_path, highlights_on: %r(/tomcat)
-      chov.item :kotata, 'Koťata', kittens_path, highlights_on: %r(/kitten)
+      chov.item :kocouri, 'Kocouři', tomcats_path, highlights_on: %r{/tomcat}
+      chov.item :kotata, 'Koťata', kittens_path, highlights_on: %r{/kitten}
     end
 
     primary.item :exhibitions, 'Výstavy', exhibitions_path
 
-    primary.item :cleny, 'Členové', users_path, highlights_on: %r(/user)
+    primary.item :cleny, 'Členové', users_path, highlights_on: %r{/user}
   end
 end

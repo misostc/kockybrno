@@ -22,6 +22,5 @@ module Kockybrno
 
     config.i18n.default_locale = :cs
     config.assets.image_optim = { pngout: false, svgo: false }
-
   end
 end

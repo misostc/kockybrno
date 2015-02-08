@@ -1,10 +1,9 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   # == Devise ==
   config.authenticate_with do
-    render :status => :forbidden, :text => "Zakázaný přístup" unless current_user.try(:admin?)
+    render status: :forbidden, text: 'Zakázaný přístup' unless current_user.try(:admin?)
   end
   config.current_user_method(&:current_user)
 
@@ -25,7 +24,7 @@ RailsAdmin.config do |config|
     show_in_app
   end
 
-  config.excluded_models << "Punch"
+  config.excluded_models << 'Punch'
 
   config.model Article do
     label_plural Article.model_name.human(count: 2)
@@ -88,6 +87,4 @@ RailsAdmin.config do |config|
       field :content, :wysihtml5
     end
   end
-
-
 end
