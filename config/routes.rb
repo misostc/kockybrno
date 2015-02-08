@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
   get 'about_us' => 'staticpages#about_us', as: :about_us
 
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations'}, skip: 'registration'
+  devise_scope :user do
+    get '/users/edit', to: 'registrations#edit', as: 'edit_user_registration'
+    put '/users', to: 'registrations#update', as: 'user_registration'
+  end
+
 
   resources :articles, only: [:index, :show]
   resources :users, only: [:index]
