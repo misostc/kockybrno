@@ -3,7 +3,7 @@
     h1= @article.title
     p
       | Publikováno
-      =< l @article.created_at, format: :short
+      =< l @article.created_at, format: :long
 .stripe-light: .container: .row
   .col-md-10.col-md-push-2
     == @article.text

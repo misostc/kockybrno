@@ -32,6 +32,9 @@ a {
   color: #f45e58;
   font-weight: 600;
 }
+.center {
+  text-align: center;
+}
 
 #head {
   position: relative;
@@ -297,10 +300,8 @@ a.arrow-right {
   }
 }
 
-.cat-list {
-  img {
-    max-width: 100%;
-  }
+.cat {
+  margin: 2em 0;
 }
 
 .stripe-dark .nav {
