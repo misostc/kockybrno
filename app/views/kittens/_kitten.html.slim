@@ -30,10 +30,10 @@
             dd= kitten.station
 
           - unless kitten.user.website.blank?
-            dt= Kitten.human_attribute_name("website")
+            dt= User.human_attribute_name("website")
             dd= kitten.user.website
 
-          dt= Kitten.human_attribute_name("email")
+          dt= User.human_attribute_name("email")
           dd= kitten.user.email
       .col-md-7
         = allowed_tags kitten.description
