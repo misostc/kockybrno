@@ -1,4 +1,4 @@
-Gallery.create(name: 'Hlavní stránka')
+PhotoGallery.create(name: 'Hlavní stránka')
 
 Region.create(name: 'vystavy-uvodni-text', content: 'a')
 Region.create(name: 'vystavy-levy-sloupec', content: 'b')

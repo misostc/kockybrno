@@ -134,8 +134,8 @@ RailsAdmin.config do |config|
   config.model Document do
     label_plural Document.model_name.human(count: 2)
     list do
-      field :name
-      field :file
+      field :title
+      field :document
     end
   end
 
@@ -143,7 +143,7 @@ RailsAdmin.config do |config|
     label_plural Photo.model_name.human(count: 2)
     list do
       field :photogallery
-      field :name
+      field :title
       field :image
     end
   end
