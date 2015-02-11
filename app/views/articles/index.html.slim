@@ -4,5 +4,5 @@
 .stripe-light: .container
   - @articles.each do |a|
     .row: .col-md-10.col-md-push-2
-      = article_short(a, 500)
+      = render a, locals: { length: 500 }
 = paginate @articles, window: 4
