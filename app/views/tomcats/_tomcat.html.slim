@@ -1,5 +1,5 @@
 .row.cat
-  .col-md-3
+  .col-xs-3
     p= link_to tomcat.image(:original), class: "swipebox", target: "_blank"
       = image_tag tomcat.image(:medium), width: '100%', class: "img-circle"
     - if current_user && tomcat.user == current_user
@@ -7,35 +7,37 @@
         span.btn.btn-default.disabled.btn-xs= tomcat.confirmed ? 'Inzerát potvrzen' : 'Čeká na potvrzení'
         =< link_to "Odstranit", tomcat_path(tomcat), method: :delete, class: "btn btn-xs btn-danger"
 
-  .col-md-4
-    dl
-      dt= Tomcat.human_attribute_name("name")
-      dd= tomcat.name
+  .col-xs-9
+    .row
+      .col-md-5
+        dl
+          dt= Tomcat.human_attribute_name("name")
+          dd= tomcat.name
 
-      - unless tomcat.born_at.blank?
-        dt= Tomcat.human_attribute_name("born_at")
-        dd= l tomcat.born_at, format: :long
+          - unless tomcat.born_at.blank?
+            dt= Tomcat.human_attribute_name("born_at")
+            dd= l tomcat.born_at, format: :long
 
-      - unless tomcat.breed.blank?
-        dt= Tomcat.human_attribute_name("breed")
-        dd= tomcat.breed
+          - unless tomcat.breed.blank?
+            dt= Tomcat.human_attribute_name("breed")
+            dd= tomcat.breed
 
-      - unless tomcat.ems.blank?
-        dt= Tomcat.human_attribute_name("ems")
-        dd= tomcat.ems
+          - unless tomcat.ems.blank?
+            dt= Tomcat.human_attribute_name("ems")
+            dd= tomcat.ems
 
-      dt= Tomcat.human_attribute_name("user")
-      dd= tomcat.user.nice_name
+          dt= Tomcat.human_attribute_name("user")
+          dd= tomcat.user.nice_name
 
-      - unless tomcat.station.blank?
-        dt= Tomcat.human_attribute_name("station")
-        dd= tomcat.station
+          - unless tomcat.station.blank?
+            dt= Tomcat.human_attribute_name("station")
+            dd= tomcat.station
 
-      - unless tomcat.user.website.blank?
-        dt= User.human_attribute_name("website")
-        dd= tomcat.user.website
+          - unless tomcat.user.website.blank?
+            dt= User.human_attribute_name("website")
+            dd= tomcat.user.website
 
-      dt= User.human_attribute_name("email")
-      dd= tomcat.user.email
-  .col-md-5
-    = allowed_tags tomcat.description
+          dt= User.human_attribute_name("email")
+          dd= tomcat.user.email
+      .col-md-7
+        = allowed_tags tomcat.description

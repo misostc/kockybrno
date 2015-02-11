@@ -1,18 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  def new
-    flash[:info] = 'Registrace musí být provedena správcem stránky'
-    redirect_to root_path
-  end
-
-  def create
-    flash[:info] = 'Registrace musí být provedena správcem stránky'
-    redirect_to root_path
-  end
-
-  def destroy
-    flash[:info] = 'Zružení účtu musí být provedeno správcem stránky'
-    redirect_to root_path
-  end
 
   private
 

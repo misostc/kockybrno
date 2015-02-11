@@ -57,6 +57,9 @@ a {
     margin-left: -60px;
   }
   .menu {
+    .container {
+      margin-right: -1em;
+    }
     @extend .stripe;
     z-index: 1;
     .nav {
@@ -301,7 +304,8 @@ a.arrow-right {
 }
 
 .cat {
-  margin: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .stripe-dark .nav {

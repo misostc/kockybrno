@@ -1,38 +1,39 @@
 .row.cat
-  .col-md-3
+  .col-xs-3
     p= link_to kitten.image(:original), class: "swipebox", target: "_blank"
       = image_tag kitten.image(:medium), width: '100%', class: "img-circle"
     - if current_user && kitten.user == current_user
         p.center
           span.btn.btn-default.disabled.btn-xs= kitten.confirmed ? 'Inzerát potvrzen' : 'Čeká na potvrzení'
           =< link_to "Odstranit", kitten_path(kitten), method: :delete, class: "btn btn-xs btn-danger"
+  .col-xs-9
+    .row
+      .col-md-5
+        dl
+          - unless kitten.born_at.blank?
+            dt= Kitten.human_attribute_name("born_at")
+            dd= l kitten.born_at, format: :long
 
-  .col-md-4
-    dl
-      - unless kitten.born_at.blank?
-        dt= Kitten.human_attribute_name("born_at")
-        dd= l kitten.born_at, format: :long
+          - unless kitten.sex.blank?
+            dt= Kitten.human_attribute_name("sex")
+            dd= kitten.sex
 
-      - unless kitten.sex.blank?
-        dt= Kitten.human_attribute_name("sex")
-        dd= kitten.sex
+          - unless kitten.breed.blank?
+            dt= Kitten.human_attribute_name("breed")
+            dd= kitten.breed
 
-      - unless kitten.breed.blank?
-        dt= Kitten.human_attribute_name("breed")
-        dd= kitten.breed
+          dt= Kitten.human_attribute_name("user")
+          dd= kitten.user.nice_name
 
-      dt= Kitten.human_attribute_name("user")
-      dd= kitten.user.nice_name
+          - unless kitten.station.blank?
+            dt= Kitten.human_attribute_name("station")
+            dd= kitten.station
 
-      - unless kitten.station.blank?
-        dt= Kitten.human_attribute_name("station")
-        dd= kitten.station
+          - unless kitten.user.website.blank?
+            dt= Kitten.human_attribute_name("website")
+            dd= kitten.user.website
 
-      - unless kitten.user.website.blank?
-        dt= Kitten.human_attribute_name("website")
-        dd= kitten.user.website
-
-      dt= Kitten.human_attribute_name("email")
-      dd= kitten.user.email
-  .col-md-5
-    = allowed_tags kitten.description
+          dt= Kitten.human_attribute_name("email")
+          dd= kitten.user.email
+      .col-md-7
+        = allowed_tags kitten.description

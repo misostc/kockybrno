@@ -37,3 +37,8 @@ gem 'simple-navigation', '~> 3.13.0'
 gem 'bootstrap-wysihtml5-rails', '0.3.1.24'
 gem 'punching_bag'
 gem 'swipebox'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end

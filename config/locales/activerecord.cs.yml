@@ -25,10 +25,23 @@ cs:
         one: Uživatel
         few: Uživatelé
         other: Uživatelů
+      region:
+        one: Textová oblast
+        few: Textové oblasti
+        other: Textových oblastí
+      photogallery:
+        one: Fotoalbum
+        few: Fotoalba
+        other: Fotoalb
     attributes:
       created_at: "Vytvořeno"
       updated_at: "Upraveno"
-
+      region:
+        name: Název
+        content: Obsah
+      photogallery:
+        name: Název
+        photos: Obrázky
       article:
         title: "Titulek"
         text: "Text"
@@ -39,6 +52,7 @@ cs:
         title: "Název"
         alt_text: "Popis pro slepé"
         image: "Obrázek"
+        photogallery: Photoalbum
       tomcat:
         name: "Jméno"
         breed: "Druh"
@@ -49,6 +63,7 @@ cs:
         user: "Majitel"
         ems: "EMS"
         born_at: "Narozen"
+        confirmed: "Inzerát potvrzen"
       kitten:
         born_at: "Vrh narozen"
         sex: "Pohlaví"
@@ -58,6 +73,7 @@ cs:
         description: "Popisek"
         user: "Majitel"
         user_id: "ID Majitele"
+        confirmed: "Inzerát potvrzen"
       user:
         prefix_title: "Titul před"
         suffix_title: "Titul za"

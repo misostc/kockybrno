@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     @region_main_text = Region.get('hlavni-stranka-uvodni-text')
     @articles = Article.all.order(created_at: :desc).limit(4)
     @gallery = Photogallery.all.order(created_at: :asc).first
-    @photos = @gallery.photos.sample(5)
+    @photos =  @gallery ? @gallery.photos.sample(5) : []
   end
 
   def load_documents
