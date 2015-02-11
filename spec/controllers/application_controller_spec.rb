@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 describe ApplicationController do
-
-  describe "GET #show" do
-
-    context "with resources in db" do
+  describe 'GET #show' do
+    context 'with resources in db' do
       before(:each) do
         @document = FactoryGirl.create(:document)
         @document.punch
@@ -16,18 +14,18 @@ describe ApplicationController do
         @region_main_text = FactoryGirl.create(:region, name: 'hlavni-stranka-uvodni-text')
       end
 
-      it "responds successfully with an HTTP 200 status code" do
+      it 'responds successfully with an HTTP 200 status code' do
         get :show
         expect(response).to be_success
         expect(response).to have_http_status(200)
       end
 
-      it "renders the show template" do
+      it 'renders the show template' do
         get :show
-        expect(response).to render_template("show")
+        expect(response).to render_template('show')
       end
 
-      it "loads all of the resources into variables" do
+      it 'loads all of the resources into variables' do
         get :show
         expect(assigns(:articles)).to eq([@article])
         expect(assigns(:hit_docs)).to eq([@document])
@@ -39,19 +37,19 @@ describe ApplicationController do
       end
     end
 
-    context "without resources" do
-      it "responds successfully with an HTTP 200 status code" do
+    context 'without resources' do
+      it 'responds successfully with an HTTP 200 status code' do
         get :show
         expect(response).to be_success
         expect(response).to have_http_status(200)
       end
 
-      it "renders the show template" do
+      it 'renders the show template' do
         get :show
-        expect(response).to render_template("show")
+        expect(response).to render_template('show')
       end
 
-      it "has empty resources" do
+      it 'has empty resources' do
         get :show
         expect(assigns(:articles)).to be_empty
         expect(assigns(:hit_docs)).to be_empty
@@ -62,6 +60,5 @@ describe ApplicationController do
         expect(assigns(:region_main_text)).to eq(nil)
       end
     end
-
   end
 end
