@@ -34,25 +34,33 @@ cs:
         few: Fotoalba
         other: Fotoalb
     attributes:
-      created_at: "Vytvořeno"
-      updated_at: "Upraveno"
       region:
         name: Název
         content: Obsah
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       photogallery:
         name: Název
         photos: Obrázky
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       article:
         title: "Titulek"
         text: "Text"
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       document:
         title: "Název"
         document: "Soubor"
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       photo:
         title: "Název"
         alt_text: "Popis pro slepé"
         image: "Obrázek"
-        photogallery: Photoalbum
+        photogallery: Fotoalbum
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       tomcat:
         name: "Jméno"
         breed: "Druh"
@@ -64,6 +72,8 @@ cs:
         ems: "EMS"
         born_at: "Narozen"
         confirmed: "Inzerát potvrzen"
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       kitten:
         born_at: "Vrh narozen"
         sex: "Pohlaví"
@@ -74,6 +84,8 @@ cs:
         user: "Majitel"
         user_id: "ID Majitele"
         confirmed: "Inzerát potvrzen"
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
       user:
         prefix_title: "Titul před"
         suffix_title: "Titul za"
@@ -86,3 +98,5 @@ cs:
         password: "Nové heslo"
         password_confirmation: "Nové heslo pro potvrzení"
         current_password: "Stávající heslo"
+        created_at: "Vytvořeno"
+        updated_at: "Upraveno"
