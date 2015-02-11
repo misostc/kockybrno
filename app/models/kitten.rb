@@ -7,4 +7,6 @@ class Kitten < ActiveRecord::Base
   validates :image, attachment_presence: true
   validates :user, presence: true
   validates :description, presence: true
+
+  default_scope { order(created_at: :desc) }
 end

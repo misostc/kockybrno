@@ -9,4 +9,9 @@ class Tomcat < ActiveRecord::Base
   validates :user, presence: true
   validates :name, presence: true
   validates :description, presence: true
+  default_scope { order(created_at: :desc) }
+
+  def defaults
+    self.confirmed = false
+  end
 end

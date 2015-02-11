@@ -9,6 +9,6 @@ class DocumentsController < ApplicationController
   end
 
   def index
-    @docs = Document.all.order(created_at: :desc).page params[:page]
+    @docs = Document.all.page params[:page]
   end
 end

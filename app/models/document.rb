@@ -14,4 +14,5 @@ class Document < ActiveRecord::Base
   validates :document, attachment_presence: true
   acts_as_punchable
   paginates_per 15
+  default_scope { order(created_at: :desc) }
 end

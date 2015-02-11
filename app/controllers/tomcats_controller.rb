@@ -37,9 +37,7 @@ class TomcatsController < ApplicationController
   end
 
   def index
-    @tomcats = Tomcat.all.order(created_at: :desc).where(confirmed: true).page(params[:page]).includes(:user)
-    if current_user
-      @user_tomcats = current_user.tomcats.order(created_at: :desc)
-    end
+    @tomcats = Tomcat.all.where(confirmed: true).page(params[:page]).includes(:user)
+    @user_tomcats = current_user.tomcats.order(created_at: :desc) if current_user
   end
 end

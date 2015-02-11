@@ -66,11 +66,13 @@ describe KittensController do
   describe 'POST #create' do
     context 'with user signed in' do
       before(:each) do
-        sign_in FactoryGirl.create(:user)
+        @user = FactoryGirl.create(:user)
+        sign_in @user
       end
 
       it 'succeedes with valid attributes' do
         expect { post :create, kitten: FactoryGirl.attributes_for(:kitten) }.to change(Kitten, :count).by(+1)
+        expect(Kitten.all.first.user).to eq(@user)
         expect(response).to redirect_to(kittens_path)
       end
 

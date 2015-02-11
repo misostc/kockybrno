@@ -11,9 +11,11 @@ class User < ActiveRecord::Base
 
   def nice_name
     out = ''
-    unless prefix_title.blank? then out << prefix_title + ' ' end
+    prefix_title.blank? || out << prefix_title + ' '
     out << "#{first_name} #{last_name}"
-    unless suffix_title.blank? then out << ", #{suffix_title}" end
+    suffix_title.blank? ||  out << ", #{suffix_title}"
     out
   end
+
+  default_scope { order(:last_name, :first_name) }
 end

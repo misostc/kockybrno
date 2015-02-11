@@ -3,10 +3,8 @@ class KittensController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    @kittens = Kitten.all.order(created_at: :desc).where(confirmed: true).page(params[:page]).includes(:user)
-    if current_user
-      @user_kittens = current_user.kittens.order(created_at: :desc)
-    end
+    @kittens = Kitten.all.where(confirmed: true).page(params[:page]).includes(:user)
+    @user_kittens = current_user.kittens.order(created_at: :desc) if current_user
   end
 
   def show_nav
