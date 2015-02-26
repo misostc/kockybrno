@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require swipebox
+
+$(document).ready(function(){
+    $(".cat a.swipebox").swipebox();
+    $(".gallery a").each(function(){
+        var t = $(this);
+        t.attr("href", t.data("imgurl"));
+    }).swipebox();
+});

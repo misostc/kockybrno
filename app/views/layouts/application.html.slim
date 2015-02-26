@@ -52,6 +52,8 @@ html
               ul
                 li= link_to "Editovat údaje", edit_user_registration_path
                 li= link_to "Odhlásit se", destroy_user_session_path, method: :delete
+                - if current_user.admin?
+                  li= link_to "Administrace stránek", rails_admin_path
             - else
               ul
                 li= link_to "Přihlásit se", new_user_session_path
@@ -66,6 +68,8 @@ html
             h3 Kontakt
             address#contact[data-mercury="full"]
               == allowed_tags @region_contact.content
+            ul
+              li= link_to "Další kontakty", contact_path
       .stripe-footer
         .container: .row
           .col-md-10.col-md-push-2

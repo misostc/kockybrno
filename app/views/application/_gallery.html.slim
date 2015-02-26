@@ -6,7 +6,7 @@
     .gallery: ul
       - @photos.each do |image|
         li
-          = link_to photo_path(image) do
+          = link_to photo_path(image), :data => {imgurl: image.image(:original)} do
             = image_tag image.image(:thumb)
     p
       | Zobrazit celou

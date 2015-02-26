@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  get 'staticpages/contact'
+
   #  namespace :mercury do
   # resources :images
   #    end
   #  mount Mercury::Engine => '/'
 
   get 'exhibitions' => 'staticpages#exhibitions', as: :exhibitions
+  get 'contact' => 'staticpages#contact', as: :contact
 
-  get 'about_us' => 'staticpages#about_us', as: :about_us
 
   devise_for :users, controllers: { registrations: 'registrations'}, skip: 'registration'
   devise_scope :user do
