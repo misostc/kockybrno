@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_documents
-    @hit_docs = Document.most_hit
+    @hit_docs = Document.where(visible: true).most_hit
   end
 
   def load_regions

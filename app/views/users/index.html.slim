@@ -15,4 +15,4 @@
           td= user.nice_name
           td= user.location
           td= user.species
-          td= user.website
+          td= link_to user.website, user.website, target: "_blank" if user.website

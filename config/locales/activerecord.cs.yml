@@ -54,6 +54,8 @@ cs:
         document: "Soubor"
         created_at: "Vytvořeno"
         updated_at: "Upraveno"
+        visible: "Viditelný v sekci Dokumenty"
+        url: "Odkaz v aplikaci"
       photo:
         title: "Název"
         alt_text: "Popis pro slepé"

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :website, :url => {:allow_blank => true, :no_local => true, :message => "není platná adresa, musí začínat http:// nebo https://"}
 
   has_many :kittens
   has_many :tomcats

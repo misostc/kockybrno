@@ -9,6 +9,6 @@ class DocumentsController < ApplicationController
   end
 
   def index
-    @docs = Document.all.page params[:page]
+    @docs = Document.all.where(visible: true).page params[:page]
   end
 end

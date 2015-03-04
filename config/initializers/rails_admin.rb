@@ -2,7 +2,6 @@ require "i18n/backend/pluralization"
 I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
 
 RailsAdmin.config do |config|
-  ### Popular gems integration
 
   # == Devise ==
   config.authenticate_with do
@@ -135,7 +134,18 @@ RailsAdmin.config do |config|
     label_plural Document.model_name.human(count: 2)
     list do
       field :title
+      field :url do
+        formatted_value do
+          bindings[:view].content_tag(:code,  bindings[:view].main_app.document_url(bindings[:object]))
+        end
+      end
+      field :visible
+    end
+
+    edit do
+      field :title
       field :document
+      field :visible
     end
   end
 
