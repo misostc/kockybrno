@@ -159,6 +159,7 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (~> 4.0)
+    rails_admin_toggleable (0.4.1)
     railties (4.1.6)
       actionpack (= 4.1.6)
       activesupport (= 4.1.6)
@@ -266,6 +267,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails-file-icons
   rails_admin (~> 0.6.5)
+  rails_admin_toggleable
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   simple-navigation (~> 3.13.0)

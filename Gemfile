@@ -38,6 +38,7 @@ gem 'bootstrap-wysihtml5-rails', '0.3.1.24'
 gem 'punching_bag'
 gem 'swipebox'
 gem 'validate_url'
+gem 'rails_admin_toggleable'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'

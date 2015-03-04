@@ -24,6 +24,7 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+    toggle
   end
 
   config.excluded_models << 'Punch'
@@ -58,7 +59,7 @@ RailsAdmin.config do |config|
     end
 
     list do
-      field :confirmed
+      field :confirmed, :toggle
       field :user
       field :name
       field :description
@@ -81,7 +82,7 @@ RailsAdmin.config do |config|
     end
 
     list do
-      field :confirmed
+      field :confirmed, :toggle
       field :user
       field :sex
       field :description
@@ -139,7 +140,7 @@ RailsAdmin.config do |config|
           bindings[:view].content_tag(:code,  bindings[:view].main_app.document_url(bindings[:object]))
         end
       end
-      field :visible
+      field :visible, :toggle
     end
 
     edit do
