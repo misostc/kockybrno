@@ -33,6 +33,10 @@
             dt= Tomcat.human_attribute_name("station")
             dd= tomcat.station
 
+          - unless tomcat.tests.blank?
+            dt= User.human_attribute_name("tests")
+            dd= tomcat.tests
+
           - unless tomcat.user.website.blank?
             dt= User.human_attribute_name("website")
             dd= tomcat.user.website

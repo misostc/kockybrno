@@ -24,6 +24,7 @@ class TomcatsController < ApplicationController
     @tomcat = Tomcat.new(tomcat_parameters)
     @tomcat.confirmed = false
     @tomcat.user = current_user
+    InzeratMailer.cat_added(@tomcat)
 
     if @tomcat.save
       redirect_to tomcats_path, notice: 'Záznam přidán. Záznam je nutno schválit správcem.'

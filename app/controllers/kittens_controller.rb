@@ -19,7 +19,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_parameters)
     @kitten.confirmed = false
     @kitten.user = current_user
-
+    InzeratMailer.cat_added(@kitten)
     if @kitten.save
       redirect_to kittens_path, notice: 'Záznam přidán. Záznam je nutno schválit správcem.'
     else

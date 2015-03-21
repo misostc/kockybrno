@@ -2,10 +2,10 @@
   .col-xs-3
     p= link_to kitten.image(:original), class: "swipebox", target: "_blank"
       = image_tag kitten.image(:medium), width: '100%', class: "img-circle"
-    - if current_user && kitten.user == current_user
-        p.center
-          span.btn.btn-default.disabled.btn-xs= kitten.confirmed ? 'Inzerát potvrzen' : 'Čeká na potvrzení'
-          =< link_to "Odstranit", kitten_path(kitten), method: :delete, class: "btn btn-xs btn-danger"
+    - if defined? current_user && kitten.user == current_user
+      p.center
+        span.btn.btn-default.disabled.btn-xs= kitten.confirmed ? 'Inzerát potvrzen' : 'Čeká na potvrzení'
+        =< link_to "Odstranit", kitten_path(kitten), method: :delete, class: "btn btn-xs btn-danger"
   .col-xs-9
     .row
       .col-md-5

@@ -22,5 +22,6 @@ module Kockybrno
 
     config.i18n.default_locale = :cs
     config.assets.image_optim = { pngout: false, svgo: false }
+    config.action_mailer.default_url_options = { host: 'www.kockybrno.cz' }
   end
 end
