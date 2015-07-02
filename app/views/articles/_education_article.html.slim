@@ -1,0 +1,5 @@
+.article
+  .date
+    .day= education_article.created_at.day
+    .mon= I18n.t("date.abbr_month_names")[education_article.created_at.month]
+  h3= link_to education_article.title, education_article_path(education_article)

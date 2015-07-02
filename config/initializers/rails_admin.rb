@@ -33,11 +33,13 @@ RailsAdmin.config do |config|
     label_plural Article.model_name.human(count: 2)
     edit do
       field :title
+      field :kind, :enum
       field :text, :wysihtml5
     end
 
     list do
       field :title
+      field :kind, :enum
       field :text
       field :created_at
     end
