@@ -34,6 +34,11 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :kind, :enum
+      # field :kind, :enum do
+      #   enum do
+      #     Article.kind.values.map {|d| [d.text, d]}
+      #   end
+      # end
       field :text, :wysihtml5
     end
 
