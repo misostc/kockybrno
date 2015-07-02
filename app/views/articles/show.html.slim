@@ -10,4 +10,7 @@
 .stripe-dark: .container: .row
   .col-md-10.col-md-push-2
     p
-      = link_to "Další zprávy", articles_path
+      - if @article.kind == :news
+        = link_to  "Další zprávy", articles_path
+      - else
+        = link_to  "Další články", education_articles_path

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def show
     @region_main_text = Region.get('hlavni-stranka-uvodni-text')
-    @articles = Article.all.limit(4)
+    @articles = Article.where(:kind => :news).limit(4)
     @gallery = Photogallery.all.order(created_at: :asc).first
     @photos =  @gallery ? @gallery.photos.sample(5) : []
   end

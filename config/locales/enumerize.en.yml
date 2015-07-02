@@ -1,0 +1,6 @@
+cz:
+  enumerize:
+    article:
+      kind:
+        news: "News"
+        education: "Educational"

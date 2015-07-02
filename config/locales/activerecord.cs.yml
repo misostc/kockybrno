@@ -47,6 +47,7 @@ cs:
       article:
         title: "Titulek"
         text: "Text"
+        kind: "Druh"
         created_at: "Vytvořeno"
         updated_at: "Upraveno"
       document:

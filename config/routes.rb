@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'exhibitions' => 'staticpages#exhibitions', as: :exhibitions
   get 'contact' => 'staticpages#contact', as: :contact
 
-
   devise_for :users, controllers: { registrations: 'registrations'}, skip: 'registration'
   devise_scope :user do
     get '/users/edit', to: 'registrations#edit', as: 'edit_user_registration'
@@ -24,6 +23,10 @@ Rails.application.routes.draw do
   resources :kittens, only: [:index, :new, :create, :destroy]
   resources :documents, only: [:index, :show]
   resources :photogalleries, only: [:show]
+
+  get 'education_articles' => 'articles#index', defaults: {kind: :education}
+  get 'education_articles/:id' => 'articles#show', defaults: {kind: :education}, as: :education_article
+
 
   root 'application#show'
 

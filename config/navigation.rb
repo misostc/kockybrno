@@ -41,6 +41,8 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item :sdruzeni, 'Sdružení', root_path
 
+    primary.item :clanky, 'Články', education_articles_path, highlights_on: %r{.*education}
+
     primary.item :chov, 'Chov', tomcats_path do |chov|
       chov.dom_class = 'nav nav-justified nav-pills'
       chov.item :kocouri, 'Kocouři', tomcats_path, highlights_on: %r{/tomcat}

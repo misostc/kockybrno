@@ -1,0 +1,8 @@
+.stripe-dark.off-top: .container: .row
+  .col-md-10.col-md-push-2
+    h1 Články
+.stripe-light: .container
+  - @articles.each do |a|
+    .row: .col-md-10.col-md-push-2
+      = render partial: "education_article", object: a
+= paginate @articles, window: 4

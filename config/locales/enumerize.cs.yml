@@ -1,0 +1,6 @@
+cs:
+  enumerize:
+    article:
+      kind:
+        news: "Aktuality"
+        education: "Články"
