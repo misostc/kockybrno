@@ -1,0 +1,31 @@
+.juko {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  .b1,.b2,.b3 {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 150px;
+  }
+  .b1 {
+    left: 0;
+    width: 240px;
+    background: image-url('juko/banner.1.jpg') no-repeat;
+  }
+  .b2 {
+    left: 50%;
+    width: 248px;
+    margin-left: -124px;
+    background: image-url('juko/banner.2.jpg') no-repeat;
+  }
+  .b3 {
+    right: 0;
+    width: 232px;
+    background: image-url('juko/banner.3.jpg') no-repeat;
+  }
+}
