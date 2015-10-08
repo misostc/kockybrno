@@ -1,0 +1,2 @@
+- banners = Dir::glob("#{File.dirname(__FILE__)}/*_ad.html.slim")
+= render Pathname(banners.sample).basename(".html.slim").to_s[1..-1]
