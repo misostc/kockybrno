@@ -58,3 +58,12 @@
   cursor: pointer;
   background: transparent image-url('dobramiska/dobramiska.png') no-repeat center center;
 }
+.nativia {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  background: #fff image-url('nativia/nativia.jpg') no-repeat top left;
+}
