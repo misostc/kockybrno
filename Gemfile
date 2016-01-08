@@ -44,6 +44,7 @@ gem 'swipebox'
 gem 'validate_url'
 gem 'rails_admin_toggleable'
 gem 'enumerize'
+gem 'google-analytics-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'

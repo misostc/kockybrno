@@ -72,6 +72,7 @@ GEM
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     fspath (2.1.1)
+    google-analytics-rails (0.0.6)
     google-webfonts (0.2.0)
       actionpack (>= 3.0.0)
     haml (4.0.5)
@@ -261,6 +262,7 @@ DEPENDENCIES
   enumerize
   factory_girl_rails
   filesize
+  google-analytics-rails
   google-webfonts
   image_optim (~> 0.18)
   image_optim_pack
