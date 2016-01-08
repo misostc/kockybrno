@@ -7,8 +7,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = google_webfonts_link_tag "Exo 2" => [500, 600, 800], subset: %w[latin latin-ext]
     = csrf_meta_tags
-    = analytics_init if Rails.env.production? 
+    = analytics_init if Rails.env.production?
   body
+    = render 'cookies_eu/consent_banner'
     - flash.each do |type, message|
       javascript:
         alert('#{{ message }}')

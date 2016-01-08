@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require swipebox
+//= require cookies_eu
+//= require turbolinks
 
 $(document).ready(function(){
     $(".gallery a").each(function(){
