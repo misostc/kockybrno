@@ -1,0 +1,16 @@
+- hidden = defined? short
+
+.row.benefit
+  .col-xs-3
+    = link_to (hidden ? benefit : benefit.link ), target: (hidden ? "" : "_blank")
+      = image_tag benefit.logo(:medium), width: '100%', class: "img-rounded"
+  .col-xs-9
+    - if hidden
+      h2=link_to benefit.title, benefit
+    - else
+      h2=benefit.title
+    ==benefit.short_description
+    p.links
+      =link_to "Stránky partnera", benefit.link, target: "_blank"
+      =link_to "Více podrobností", benefit if hidden
+    ==benefit.description unless hidden

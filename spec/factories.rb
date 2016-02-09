@@ -1,4 +1,10 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :benefit do
+    title "MyString"
+short_description "MyText"
+description "MyText"
+link "MyString"
+  end
+
   factory :article do
     title 'MyString'
     text 'MyText'

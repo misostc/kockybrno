@@ -174,4 +174,27 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Benefit do
+    label_plural Benefit.model_name.human(count: 2)
+    list do
+      field :title
+    end
+    edit do
+      field :title
+      field :link do
+        help "Odkaz na stránky partnera"
+        default_value "http://www."
+      end
+      field :logo do
+        help "Preferujte bílé nebo průhledné pozadí"
+      end
+      field :short_description, :wysihtml5 do
+        help "Viditelné ve seznamu výhod"
+      end
+      field :description, :wysihtml5 do
+        help "Text po rozkliku na detail, nepovinný"
+      end
+    end
+  end
+
 end

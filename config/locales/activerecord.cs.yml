@@ -33,6 +33,10 @@ cs:
         one: Fotoalbum
         few: Fotoalba
         other: Fotoalb
+      benefit:
+        one: Výhoda
+        few: Výhody
+        other: Výhod
     attributes:
       region:
         name: Název
@@ -103,3 +107,9 @@ cs:
         current_password: "Stávající heslo"
         created_at: "Vytvořeno"
         updated_at: "Upraveno"
+      benefit:
+        title: "Titulek"
+        short_description: "Krátky popisek"
+        description: "Detailní popis"
+        link: "Překlik"
+        logo: "Logo"

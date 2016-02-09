@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'staticpages/contact'
 
   #  namespace :mercury do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :tomcats, only: [:index, :new, :create, :destroy]
   resources :kittens, only: [:index, :new, :create, :destroy]
   resources :documents, only: [:index, :show]
+  resources :benefits, only: [:index, :show]
   resources :photogalleries, only: [:show]
 
   get 'education_articles' => 'articles#index', defaults: {kind: :education}
