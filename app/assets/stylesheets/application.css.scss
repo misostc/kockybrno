@@ -23,7 +23,6 @@ $pagination-active-border: $deep-gray;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "banners";
 
 body {
   background: $light-gray;
@@ -332,4 +331,11 @@ form {
 .cat {
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+
+iframe#promotion {
+  width: 100%;
+  height: 150px;
+  border: 0;
 }

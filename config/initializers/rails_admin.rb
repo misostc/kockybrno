@@ -197,4 +197,23 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Banner do
+    label_plural Banner.model_name.human(count: 2)
+    list do
+      field :title
+    end
+    edit do
+      field :title do
+        help "Text, který se zobrazí při přejetí myší na banner"
+      end
+      field :link do
+        help "Odkaz na stránky partnera"
+        default_value "http://www."
+      end
+      field :image do
+        help "Obrázek, bude ořezaný na 750x150px"
+      end
+    end
+  end
+
 end

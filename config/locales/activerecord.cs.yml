@@ -37,6 +37,10 @@ cs:
         one: Výhoda
         few: Výhody
         other: Výhod
+      banner:
+        one: Banner
+        few: Bannery
+        other: Bannerů
     attributes:
       region:
         name: Název
@@ -113,3 +117,7 @@ cs:
         description: "Detailní popis"
         link: "Překlik"
         logo: "Logo"
+      banner:
+        title: "Titulek"
+        link: "Překlik"
+        image: "Obrázek"

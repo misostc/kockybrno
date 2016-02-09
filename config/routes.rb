@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'banners/random', as: :random_banner
+
   get 'staticpages/contact'
 
   #  namespace :mercury do

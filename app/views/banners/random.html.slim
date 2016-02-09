@@ -1,0 +1,8 @@
+doctype html
+html
+  head
+    = stylesheet_link_tag 'banners', media: 'all'
+  body#promotion_body
+    -unless @banner.nil?
+        =link_to @banner.link, target: "_blank", rel: "nofollow"
+          =image_tag @banner.image(:big), alt: @banner.title

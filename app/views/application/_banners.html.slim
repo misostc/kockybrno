@@ -1,2 +1,2 @@
-- banners = Dir::glob("#{File.dirname(__FILE__)}/*_ad.html.slim")
-= render Pathname(banners.sample).basename(".html.slim").to_s[1..-1]
+.stripe-dark: .container: .row: .col-md-10.col-md-push-2
+  iframe#promotion[src=random_banner_path]
